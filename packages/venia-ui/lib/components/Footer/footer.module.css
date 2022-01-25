@@ -1,0 +1,222 @@
+.root {
+    /* border-top: 2px solid rgb(var(--venia-global-color-gray-100)); */
+    color: white;
+    display: grid;
+    font-size: var(--venia-typography-body-S-fontSize);
+    grid-template-areas:
+        'links'
+        'brand';
+    grid-template-columns: 100%;
+    line-height: var(--venia-global-lineHeight-300);
+    margin: 0 auto;
+    max-width: var(--venia-global-maxWidth);
+    /* max-width: 100%; */
+    min-height: 15rem;
+    padding-top: 4rem;
+    row-gap: 4rem;
+    width: 100%;
+    background: #201c13;
+}
+
+.footerSec{
+    max-width: 100%;
+    background: #201c13;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 960px) {
+    .root {
+        grid-template-areas: 'links' 'brand';
+        max-width: 960px;
+    }
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    grid-area: links;
+    grid-auto-columns: 18rem;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1.5fr) 3fr;
+    padding: 0 2rem;
+}
+
+@media (max-width: 960px) {
+    .links {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    }
+}
+
+.linkGroup {
+    align-content: start;
+    display: grid;
+    gap: 1em;
+    width: 20%;
+}
+
+.linkItem:first-child {
+    /* color: rgb(var(--venia-global-color-gray-900)); */
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.linkItem{
+    color: #b2b1ae;
+}
+
+.callout {
+    font-size: var(--venia-typography-body-S-fontSize);
+    justify-self: center;
+    line-height: var(--venia-global-lineHeight-300);
+    max-width: 20rem;
+    min-width: 20rem;
+    width: 20%;
+}
+
+.aboutCol {
+    font-size: var(--venia-typography-body-S-fontSize);
+    justify-self: center;
+    line-height: var(--venia-global-lineHeight-300);
+    max-width: 20rem;
+    min-width: 20rem;
+    width: 20%;
+}
+
+@media (max-width: 960px) {
+    .callout {
+        justify-self: start;
+    }
+}
+
+.aboutHeading {
+    color: white;
+    font-size: var(--venia-global-fontSize-1000);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+
+.aboutBody {
+    margin: .5rem 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b2b1ae;
+}
+
+.calloutHeading {
+    color: white;
+    font-size: var(--venia-typography-body-L-fontSize);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calloutList{
+    margin: 1.15rem 0;
+}
+
+.calloutLabel{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.calloutValue{
+    font-size: 14px;
+    font-weight: 400;
+    color: #b2b1ae;
+}
+
+.calloutBody {
+    margin: 1rem 0;
+}
+
+.socialLinks {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    justify-content: start;
+    margin-top: 2.25rem;
+}
+
+.socialLinks li{
+    border: 1px solid #fff;
+    padding: 0.75rem;
+    border-radius: 50%;
+}
+
+.branding {
+    align-items: center;
+    border-top: 1px solid #fff;
+    /* display: grid;
+    grid-area: brand;
+    grid-auto-flow: column;
+    grid-template-areas: 'a b c';
+    grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr); */
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+@media (max-width: 960px) {
+    .branding {
+        gap: 1rem;
+        grid-auto-flow: row;
+        grid-template-areas: 'c' 'b' 'a';
+        grid-template-columns: auto;
+        height: auto;
+        justify-items: center;
+        padding: 2.5rem 2rem 4rem;
+        text-align: center;
+    }
+}
+
+.legal {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-area: c;
+    grid-auto-flow: column;
+    justify-content: end;
+}
+
+@media (max-width: 960px) {
+    .legal {
+        justify-content: center;
+    }
+}
+
+.copyright {
+    grid-area: b;
+    text-align: center;
+}
+
+.logo {
+    grid-area: a;
+}
+
+@media (max-width: 960px) {
+    .logo {
+        margin-top: 2.5rem;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .callout {
+        min-width: 10rem;
+    }
+}
+@media screen and (max-width: 767px) {
+    .links {
+        padding: 0 1rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 10px;
+    }
+    .callout {
+        min-width: 100%;
+    }
+}
